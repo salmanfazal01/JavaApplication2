@@ -94,10 +94,10 @@ public class ManagerGUI {
    public void showEventDemo(){
       setup(); 
 
-      JButton addButton = new JButton("Add a dentist");
-      JButton viewButton = new JButton("View all dentists");
-      JButton updateButton = new JButton("Update a dentist");
-      JButton deletelButton = new JButton("Delete a dentist");
+      JButton addButton = new JButton("Add a new Customer");
+      JButton viewButton = new JButton("View all Customers");
+      JButton updateButton = new JButton("Update a Customer");
+      JButton deletelButton = new JButton("Delete a Customer");
 
       addButton.setActionCommand("Add a dentist");
       viewButton.setActionCommand("View all dentists");
@@ -148,7 +148,7 @@ public class ManagerGUI {
       
       JLabel  reflabel= new JLabel("Enter the reference no: ", JLabel.CENTER);
       JLabel  namelabel= new JLabel("Enter the name: ", JLabel.CENTER);
-      JLabel  specLabel = new JLabel("Enter the speciality: ", JLabel.CENTER);
+      JLabel  specLabel = new JLabel("Membership Type: ", JLabel.CENTER);
       final JTextField ref = new JTextField(6);
       final JTextField name = new JTextField(10);
       final JTextField spec = new JTextField(20);      
@@ -165,7 +165,7 @@ public class ManagerGUI {
             
             String data = "A new dentist is registered with ref no: " + ref.getText();
             data += ", name: " + name.getText();
-            data += ", speciality: "+ spec.getText(); 
+            data += ", Membership Type: "+ spec.getText(); 
             
             statusLabel.setText(data);        
          }        
