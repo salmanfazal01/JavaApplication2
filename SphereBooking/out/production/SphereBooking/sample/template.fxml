@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+
+    <top>
+        <HBox alignment="CENTER" style="-fx-background-color: #282E34; -fx-padding: 10">
+            <Label text="Sphere Booking" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" underline="true">
+            <font>
+               <Font name="System Bold" size="20.0" />
+            </font></Label>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox alignment="TOP_CENTER" prefHeight="339.0" prefWidth="110.0" style="-fx-background-color: #282E34;">
+            <Button fx:id="btnHome1" contentDisplay="TOP" layoutY="42.0" mnemonicParsing="false" onAction="#btnHomeOnClick" prefHeight="78.0" prefWidth="127.0" text="Session">
+                <graphic>
+                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@icons/session.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <ImageView fitHeight="5.0" fitWidth="114.0" preserveRatio="true">
+                <image>
+                    <Image url="@icons/btnBreak.png" />
+                </image>
+            </ImageView>
+
+            <Button fx:id="btnHome2" contentDisplay="TOP" layoutY="42.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="127.0" text="Users">
+                <graphic>
+                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@icons/users.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <ImageView fitHeight="5.0" fitWidth="114.0" preserveRatio="true">
+                <image>
+                    <Image url="@icons/btnBreak.png" />
+                </image>
+            </ImageView>
+
+            <Button fx:id="btnHome3" contentDisplay="TOP" layoutY="42.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="127.0" text="Admin">
+                <graphic>
+                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@icons/admin.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <ImageView fitHeight="5.0" fitWidth="114.0" preserveRatio="true">
+                <image>
+                    <Image url="@icons/btnBreak.png" />
+                </image>
+            </ImageView>
+
+            <Button fx:id="btnHome4" contentDisplay="TOP" layoutY="42.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="127.0" text="Settings">
+                <graphic>
+                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@icons/settings.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+
+        </VBox>
+    </left>
+
+    <bottom>
+        <HBox style="-fx-background-color: white">
+            <Label text="Created by Group Name" />
+        </HBox>
+    </bottom>
+
+    <center>
+        <StackPane fx:id="acContent" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white" />
+            </children>
+        </StackPane>
+   </center>
+
+   <right>
+   </right>
+
+</BorderPane>
