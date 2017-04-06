@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane style="-fx-border-color: #282E34" stylesheets="@../stylesheets/styles.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.layout.LayoutController">
+
+    <top>
+        <BorderPane style="-fx-background-color: #282E34; -fx-padding: 0px 0px 25px;">
+            <center>
+                <Label text="Sphere Booking" textFill="WHITE" textOverrun="CLIP" underline="true" BorderPane.alignment="CENTER"
+                       style="-fx-padding: 16px 0px 0px">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+            </center>
+         <right>
+            <Button fx:id="btnClose" alignment="TOP_RIGHT" mnemonicParsing="false" onAction="#clickedBtnClose"
+                    style="-fx-padding: 8px 10px 5px; -fx-text-fill: white; -fx-font-weight: bolder; -fx-background-color: #fa3838;"
+                    text="X" BorderPane.alignment="TOP_RIGHT">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </right>
+         </BorderPane>
+    </top>
+
+    <left>
+        <VBox alignment="TOP_CENTER" prefHeight="339.0" prefWidth="110.0" style="-fx-background-color: #282E34;">
+
+            <Button fx:id="sessionsBtn" contentDisplay="TOP" layoutY="42.0" mnemonicParsing="false" onAction="#clickedBtnSessions" prefHeight="78.0" prefWidth="127.0" text="Session">
+                <graphic>
+                    <ImageView fx:id="btnSessions" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../icons/session.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <ImageView fitHeight="5.0" fitWidth="114.0" preserveRatio="true">
+                <image>
+                    <Image url="@../icons/btnBreak.png" />
+                </image>
+            </ImageView>
+
+            <Button fx:id="membersBtn" contentDisplay="TOP" layoutY="42.0" mnemonicParsing="false" onAction="#clickedBtnMembers" prefHeight="78.0" prefWidth="127.0" text="Members">
+                <graphic>
+                    <ImageView fx:id="btnMembers" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../icons/users.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <ImageView fitHeight="5.0" fitWidth="114.0" preserveRatio="true">
+                <image>
+                    <Image url="@../icons/btnBreak.png" />
+                </image>
+            </ImageView>
+
+            <Button fx:id="adminBtn" contentDisplay="TOP" layoutY="42.0" mnemonicParsing="false" onAction="#clickedBtnAdmin" prefHeight="78.0" prefWidth="127.0" text="Admin">
+                <graphic>
+                    <ImageView fx:id="btnAdmin" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../icons/admin.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+        </VBox>
+    </left>
+
+    <bottom>
+        <HBox alignment="BASELINE_RIGHT" style="-fx-background-color: #cbcbcb; -fx-border-color: #282E34">
+            <Label text="Design By SALMAN | SalmanFazal.co.uk; 2017 All Rights Reserved " />
+        </HBox>
+    </bottom>
+
+    <center>
+        <StackPane fx:id="mainPane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white" />
+            </children>
+        </StackPane>
+   </center>
+
+    <!--<center>
+        <GridPane alignment="center" hgap="10" vgap="10">
+            <Label text="Name: " GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="name" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+            <Label text="Password: " GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="pass" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Button text="Login" GridPane.rowIndex="2" GridPane.columnIndex="1" onAction="#btnLogin"/>
+        </GridPane>
+    </center>-->
+
+   <right>
+   </right>
+
+</BorderPane>
