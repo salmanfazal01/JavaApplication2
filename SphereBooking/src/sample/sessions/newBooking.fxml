@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import java.lang.String?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
+
+<BorderPane stylesheets="@../stylesheets/styles.css" xmlns="http://javafx.com/javafx/8.0.112"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.sessions.newBookingController">
+
+    <center>
+        <GridPane alignment="CENTER">
+            <GridPane hgap="15" vgap="20"
+                      style="-fx-background-color: white; -fx-padding: 30; -fx-background-radius: 30; -fx-border-color: #282E34; -fx-border-width: 8; -fx-border-radius: 22">
+
+                <Label text="Create New Booking" underline="true" GridPane.columnSpan="3" GridPane.halignment="RIGHT"
+                       GridPane.rowIndex="0" style="-fx-padding: 0px 0px 10px 0px">
+                    <font>
+                        <Font name="System Bold" size="20.0"/>
+                    </font>
+                </Label>
+
+                <Label text="*Booking ID: " GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField text="123" GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="bookingIdTextField"
+                           editable="false"/>
+
+                <Label text="*Member ID: " GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <TextField fx:id="membersTextField" GridPane.columnIndex="3" GridPane.rowIndex="1" maxWidth="Infinity"
+                           onKeyTyped="#checkPayment"/>
+
+                <Label text="*Session Type: " GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <ChoiceBox fx:id="sessionType" GridPane.columnIndex="1" GridPane.rowIndex="2" maxWidth="Infinity"
+                           onAction="#checkPayment">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Standard"/>
+                            <String fx:value="Training"/>
+                        </FXCollections>
+                    </items>
+                    <value>
+                        <String fx:value="Standard"/>
+                    </value>
+                </ChoiceBox>
+
+                <Label text="*Session Time: " GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                <DatePicker fx:id="bookingDate" GridPane.columnIndex="3" GridPane.rowIndex="2" prefWidth="1"
+                            GridPane.halignment="LEFT"/>
+                <Spinner fx:id="startTime" prefWidth="50" GridPane.rowIndex="2" GridPane.columnIndex="3" min="09"
+                         max="17"
+                         GridPane.halignment="CENTER"/>
+                <Spinner fx:id="endTime" prefWidth="50" GridPane.rowIndex="2" GridPane.columnIndex="3" min="10" max="18"
+                         GridPane.halignment="RIGHT"/>
+
+                <Label text="Instructor: " GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <ChoiceBox fx:id="instructorChoiceBox" GridPane.columnIndex="1" GridPane.rowIndex="3"
+                          maxWidth="Infinity">
+
+                    <value>
+                        <String fx:value="None"/>
+                    </value>
+                </ChoiceBox>
+
+                <Label text="Payment:" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+                <TextField editable="false" prefWidth="6" text="" GridPane.columnIndex="3" GridPane.halignment="LEFT"
+                           GridPane.rowIndex="3" fx:id="payment"/>
+                <CheckBox GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="3"
+                          onAction="#checkPayment" fx:id="paymentCheckBox" />
+
+                <Label text="" underline="true" GridPane.rowIndex="5" GridPane.columnIndex="0"
+                       GridPane.columnSpan="2" style="-fx-padding: 0px 0px 10px 0px" fx:id="statusLabel"/>
+
+                <Button style="-fx-text-fill: white; -fx-padding: 12;" text=" Book " GridPane.columnIndex="3"
+                        GridPane.halignment="LEFT" GridPane.rowIndex="5" onAction="#btnBookClicked"/>
+                <Button style="-fx-text-fill: white; -fx-padding: 12" text="Cancel" GridPane.columnIndex="3"
+                        GridPane.halignment="RIGHT" GridPane.rowIndex="5" fx:id="btnClose"
+                        onAction="#btnCancelClicked"/>
+
+            </GridPane>
+        </GridPane>
+    </center>
+
+</BorderPane>
