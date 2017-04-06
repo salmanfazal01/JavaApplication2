@@ -1,0 +1,49 @@
+
+.text-field{
+    -fx-border-style: solid;
+    -fx-border-color:  linear-gradient(to bottom, #696969 10%,#696969 90%,#696969 91%,#696969 100%);
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.3) ;
+}
+.text-field:focused{
+    -fx-border-style: solid;
+    -fx-border-color:  linear-gradient(to bottom, #E4E4E4 10%,#E4E4E4 90%,#E4E4E4 91%,#E4E4E4 100%);
+    -fx-prompt-text-fill: transparent ;
+}
+
+.choice-box{
+    -fx-border-style: solid;
+    -fx-border-color:  linear-gradient(to bottom, #696969 10%,#696969 90%,#696969 91%,#696969 100%);
+}
+.choice-box:focused{
+    -fx-border-style: solid;
+    -fx-border-color:  linear-gradient(to bottom, #E4E4E4 10%,#E4E4E4 90%,#E4E4E4 91%,#E4E4E4 100%);
+}
+
+.table-view{
+    -fx-text-fill: black;
+}
+
+.button{
+    -fx-text-fill: rgba(255,255,255,0.8);
+    -fx-border-color:  linear-gradient(to bottom, #696969 10%,#696969 90%,#696969 91%,#696969 100%);
+    -fx-base: rgb(50, 50, 50);
+    -fx-background-color: rgb(50, 50, 50);
+    -fx-control-inner-background:  rgb(50, 50, 50);
+    -fx-border-style: solid;
+    -fx-border-width: 2;
+    -fx-padding: 8;
+    -fx-border-insets: 0;
+}
+
+.button:hover{
+    -fx-text-fill: rgba(255,255,255,1);
+ }
+
+.button:focused {
+    -fx-text-fill: rgba(255,255,255,0.8);
+    -fx-border-color:  linear-gradient(to bottom, #696969 10%,#696969 90%,#696969 91%,#696969 100%);
+    -fx-border-style: solid;
+    -fx-border-width: 2;
+    -fx-padding: 8;
+    -fx-border-insets: 0;
+}

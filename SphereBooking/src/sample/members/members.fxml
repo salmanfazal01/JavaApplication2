@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane stylesheets="@../stylesheets/members.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.members.MembersController">
+
+    <!-- Table on left pane    -->
+    <left>
+        <TableView fx:id="table" onKeyReleased="#tableClicked" onMouseClicked="#tableClicked">
+            <columns>
+                <TableColumn fx:id="column_id" prefWidth="80" text="ID" />
+                <TableColumn fx:id="column_name" prefWidth="120" text="Name" />
+                <TableColumn fx:id="column_membership" prefWidth="100" text="Membership" />
+                <TableColumn fx:id="column_sessions" prefWidth="60" text="Sessions" />
+            </columns>
+        </TableView>
+    </left>
+
+    <!--  center pane, contain forms and buttons  -->
+    <center>
+        <GridPane hgap="10" style="-fx-padding: 10; -fx-base: rgb(50, 50, 50); -fx-background: rgb(50, 50, 50); -fx-control-inner-background:  rgb(50, 50, 50);                   -fx-background-color: radial-gradient(radius 100%, derive(-fx-base,20%), derive(-fx-base,-20%)); -fx-border-color: #E4E4E4; -fx-border-width: 3" vgap="8">
+            <children>
+
+                <!-- ******** GENERAL ********    -->
+
+                <Label style="-fx-padding: 5 0 0 0; -fx-text-fill: #fa4141" text="General" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+
+                <Label text="Member ID: " GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="id" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <GridPane alignment="TOP_RIGHT" maxWidth="Infinity" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="5">
+                    <ImageView fx:id="image" fitHeight="165" fitWidth="165" style="-fx-background-color: #282E34; -fx-border-radius: 5;                     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); " GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0">
+                        <image>
+                            <Image url="@../icons/users/image.jpg" />
+                        </image>
+                    </ImageView>
+                    <Button fx:id="btnEdit" onAction="#editClicked" style="-fx-padding: 7" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
+                        <graphic>
+                            <ImageView fitHeight="23" fitWidth="23" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../icons/edit.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </GridPane>
+
+                <Label text="Title: " GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <ChoiceBox fx:id="title" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Mr." />
+                            <String fx:value="Mrs." />
+                            <String fx:value="Ms." />
+                            <String fx:value="Miss." />
+                        </FXCollections>
+                    </items>
+                    <value>
+                        <String fx:value="Mr." />
+                    </value>
+                </ChoiceBox>
+
+                <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField fx:id="fName" promptText="First Name" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="lName" promptText="Last Name" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+
+                <Label text="Membership: " GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <TextField fx:id="membership" prefWidth="282.0" GridPane.columnIndex="1" GridPane.rowIndex="5" text="None" editable="false"/>
+
+
+                <!-- ******** ADDRESS ********    -->
+
+                <Label style="-fx-padding: 10 0 0 0; -fx-text-fill: #fa4141" text="Address" GridPane.columnIndex="0" GridPane.rowIndex="6">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+
+                <Label text="Street: " GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                <TextField fx:id="street" prefWidth="282.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="7" />
+
+                <Label text="City: " GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                <TextField fx:id="city" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="8" />
+
+                <Label text="Post Code: " GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                <TextField fx:id="postCode" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="9" />
+
+                <!-- ******** CONTACT ********    -->
+
+                <Label style="-fx-padding: 10 0 0 0; -fx-text-fill: #fa4141" text="Contact" GridPane.columnIndex="0" GridPane.rowIndex="10">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+
+                <Label text="Phone: " GridPane.columnIndex="0" GridPane.rowIndex="11" />
+                <TextField fx:id="phone" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="11" />
+
+                <Label text="Email: " GridPane.columnIndex="0" GridPane.rowIndex="12" />
+                <TextField fx:id="email" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="12" />
+
+                <Label text="Total Sessions: " GridPane.columnIndex="0" GridPane.rowIndex="15" />
+                <TextField fx:id="sessions" editable="false" text="0" GridPane.columnIndex="1" GridPane.columnSpan="1" GridPane.rowIndex="15" />
+
+
+
+                <!-- ******** BUTTONS ********    -->
+                <Button onAction="#upgradeClicked" text="Upgrade" GridPane.columnIndex="0" GridPane.rowIndex="17"/>
+                <HBox alignment="CENTER_RIGHT" style="-fx-spacing: 10" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="17">
+                    <Button onAction="#newClicked" text="New" />
+                    <Button onAction="#addClicked" text="Add" />
+                    <Button onAction="#updateClicked" text="Update" />
+                    <Button fx:id="deleteBtn" onAction="#deleteClicked" text="Delete" />
+                </HBox>
+
+            </children>
+
+            <columnConstraints>
+                <ColumnConstraints percentWidth="24.0" />
+                <ColumnConstraints percentWidth="36.0" />
+                <ColumnConstraints percentWidth="38.0" />
+                <ColumnConstraints />
+            </columnConstraints>
+
+        </GridPane>
+    </center>
+
+</BorderPane>
